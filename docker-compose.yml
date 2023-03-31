@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15.2-alpine
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    restart: always
+    environment:
+      POSTGRES_USER: 'root'
+      POSTGRES_PASSWORD: 'secret'
+    ports:
+      - 5432:5432
+    networks:
+      - template-go-pg
+
+networks:
+  template-go-pg:
+
+volumes:
+  db_data:

@@ -1,10 +1,14 @@
 package controller
 
 import (
+	"context"
+
 	db "github.com/JeerasakTH/template-go-postgres/database"
 	"github.com/JeerasakTH/template-go-postgres/model"
 	"github.com/gin-gonic/gin"
 )
+
+var ctx = context.Background()
 
 func GetAllCouponDetail(resource *db.PostgresDB) func(c *gin.Context) {
 	return func(c *gin.Context) {

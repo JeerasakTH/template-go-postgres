@@ -9,6 +9,7 @@ import (
 )
 
 func main() {
+	// rdb := service.RedisConnect()
 	db, err := database.ConnectDB()
 	if err != nil {
 		fmt.Println("ConnectDB error:")
